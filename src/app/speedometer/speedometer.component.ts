@@ -53,7 +53,7 @@ export class SpeedometerComponent implements OnInit {
           if ( gaugeChart.arrows[ 0 ].setValue ) {
       //      console.log("getting chart value")
             
-        //    console.log("Value = " + value);
+        //s    console.log("Value = " + value);
             gaugeChart.arrows[ 0 ].setValue(value );
             gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
           }
