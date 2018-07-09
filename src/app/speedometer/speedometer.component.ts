@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AmChartsService, AmChart } from "@amcharts/amcharts3-angular";
 import {Observable} from 'rxjs/Rx';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-speedometer',
   templateUrl: './speedometer.component.html',
@@ -12,33 +14,48 @@ export class SpeedometerComponent implements OnInit {
   public options: any;
   private chart: AmChart;
   private value: number;
+  private values : any = [];
   
-  constructor(private AmCharts: AmChartsService) {}
+  constructor(private AmCharts: AmChartsService , private dataService:DataService) {}
 
   ngOnInit() {
      // Create chartdiv1
     // Create chartdiv2
     this.chart = this.AmCharts.makeChart('chartdiv', this.makeOptions());
     this.value = Math.round( Math.random() * 200 );
-    Observable.interval(2000 ).subscribe(x => {
-      this.randomValue(this.chart);
+    this.dataService.getJSON().subscribe(data => {this.values=data;
+      this.changeValue();
+    }, error => {
+      console.log(error);
     });
-
-
+    
   }
 
-  randomValue(gaugeChart) {
+  changeValue(){
+    var i = 0;
+    Observable.interval(2000 ).subscribe(x => {
+      if(this.values){
+        if(this.values[i]){
+          if(this.values[i].speed){
+            this.randomValue(this.chart, this.values[i].speed);
+          }
+        }
+      }
+    });
+  }
+
+
+  randomValue(gaugeChart, value) {
     console.log("value called");
-    this.value = (this.value + 5);
     if ( gaugeChart ) {
       if ( gaugeChart.arrows ) {
         if ( gaugeChart.arrows[ 0 ] ) {
           if ( gaugeChart.arrows[ 0 ].setValue ) {
             console.log("getting chart value")
             
-            console.log("Value = " + this.value);
-            gaugeChart.arrows[ 0 ].setValue( this.value );
-            gaugeChart.axes[ 0 ].setBottomText( this.value + " km/h" );
+            console.log("Value = " + value);
+            gaugeChart.arrows[ 0 ].setValue(value );
+            gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
           }
         }
       }
