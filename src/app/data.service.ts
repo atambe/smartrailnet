@@ -13,4 +13,6 @@ export class DataService {
                     .map((res:any) => res.json());
 
   }
+
+  
 }

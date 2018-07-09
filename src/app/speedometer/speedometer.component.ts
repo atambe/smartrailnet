@@ -46,14 +46,14 @@ export class SpeedometerComponent implements OnInit {
 
 
   randomValue(gaugeChart, value) {
-    console.log("value called");
+    //console.log("value called");
     if ( gaugeChart ) {
       if ( gaugeChart.arrows ) {
         if ( gaugeChart.arrows[ 0 ] ) {
           if ( gaugeChart.arrows[ 0 ].setValue ) {
-            console.log("getting chart value")
+      //      console.log("getting chart value")
             
-            console.log("Value = " + value);
+        //    console.log("Value = " + value);
             gaugeChart.arrows[ 0 ].setValue(value );
             gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
           }

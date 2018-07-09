@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Rx';
 
 
 import { DataService } from '../data.service';
+import { ok } from 'assert';
+import { and } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-map',
@@ -64,16 +66,21 @@ export class MapComponent {
     position: destination,
     map: map,
     title: 'Train Coordinates',
-    icon : image1
+    icon : image1,
+    animation:google.maps.Animation.DROP
   });
 
-  this.calculateAndDisplayRoute(
-    directionsDisplay, directionsService, markerArray, stepDisplay, map);
+ 
+    // this.calculateAndDisplayRoute(
+    //   directionsDisplay, directionsService, markerArray, stepDisplay, map);
 
+      // Code to load the data from JSON and display the path 
     this.dataService.getJSON().subscribe(data => {this.values=data;
-    console.log(this.values[1]);
+    this.processSnapToRailRoadResponse(map);
     this.movePrimaryTrain(map,mark);
     this.moveTrainAhead(map,mark1);
+    this.drawCircle(mark, mark1, map);
+    
   }, error => {
     console.log(error);
   });
@@ -88,7 +95,7 @@ export class MapComponent {
         this.trackTrains(location, map , mark);       
       });
   }
-
+  
   moveTrainAhead(map, mark1){
     var j = 10;
     Observable.interval(1000).subscribe(x => {
@@ -110,6 +117,15 @@ export class MapComponent {
    
   }
 
+  drawDistance(mark, mark1, map){  
+    var snappedPolyline = new google.maps.Polyline({
+            strokeWeight: 6
+          }); 
+    Observable.interval(1000).subscribe(x => {
+      this.calculateDistance(mark.getPosition(),mark1.getPosition(), map ,snappedPolyline );   
+    });
+  }
+
 calculateAndDisplayRoute(directionsDisplay, directionsService,
   markerArray, stepDisplay, map) {
 // First, remove any existing markers from the map.
@@ -126,17 +142,138 @@ directionsService.route({
   transitOptions: {
     departureTime: new Date(Date.now()),
     modes: ["TRAIN"]
-  }
-}, function(response, status) {
-  // Route the directions and pass the response to a function to create
-  // markers for each step.
-  if (status === 'OK') {
+    }
+  }, function(response, status) {
+    // Route the directions and pass the response to a function to create
+    // markers for each step.
+    if (status === 'OK') {
     directionsDisplay.setDirections(response);
     //this.showSteps(response, markerArray, stepDisplay, map);
-  } else {
-    window.alert('Directions request failed due to ' + status);
+   } else {
+      window.alert('Directions request failed due to ' + status);
+   }
+  });
+}
+
+
+processSnapToRailRoadResponse(map) {
+    var snappedCoordinates = [];
+    for (var i = 0; i < this.values.length; i++) {
+      var latlng = new google.maps.LatLng(
+            this.values[i].latitude,
+            this.values[i].longitude);
+      snappedCoordinates.push(latlng);
+    }
+
+  var snappedPolyline = new google.maps.Polyline({
+        path: snappedCoordinates,
+        strokeColor: 'black',
+        strokeWeight: 3
+      });
+    
+      snappedPolyline.setMap(map);
+
   }
-});
+  
+ 
+
+
+ calculateDistance(p1, p2, map, snappedPolyline) {
+   var disMat = new google.maps.DistanceMatrixService();
+   disMat.getDistanceMatrix(
+     {
+      origins : [p1],
+      destinations :[ p2],
+      travelMode : google.maps.TravelMode.TRANSIT,
+      transitOptions : {
+        modes : [google.maps.TransitMode.TRAIN]
+      }
+     },function(response,status){
+      if (status == google.maps.DistanceMatrixStatus.OK) {
+        var origins = response.originAddresses;
+        var destinations = response.destinationAddresses;
+    
+        for (var i = 0; i < origins.length; i++) {
+          var results = response.rows[i].elements;
+          for (var j = 0; j < results.length; j++) {
+            var element = results[j];
+            var distance = element.distance.value;
+            var color = 'green';
+            if(distance < 1500){
+              color = 'red';
+            } 
+            if(distance >= 1500 && distance < 2000){
+              color = 'orange';
+            } 
+            if(distance > 2000){
+              color = 'green';
+            }
+            console.log(color);
+            snappedPolyline.setOptions({strokeColor : color})
+            snappedPolyline.setPath([p1,p2]);
+            snappedPolyline.setMap(map);   
+          }
+        }
+      }
+     }
+   )        
+}
+
+
+drawCircle(mark, mark1, map){  
+  var snappedCircle = new google.maps.Circle({
+    strokeColor: 'black',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillOpacity: 0.35,
+    map: map,
+    radius: Math.sqrt(12000)
+  });
+  
+  Observable.interval(1000).subscribe(x => {
+    this.calculateCirlceDistance(mark.getPosition(),mark1.getPosition(),snappedCircle );   
+  });
+}
+
+
+calculateCirlceDistance(p1, p2, snappedCircle) {
+  var disMat = new google.maps.DistanceMatrixService();
+  disMat.getDistanceMatrix(
+    {
+     origins : [p1],
+     destinations :[ p2],
+     travelMode : google.maps.TravelMode.TRANSIT,
+     transitOptions : {
+       modes : [google.maps.TransitMode.TRAIN]
+     }
+    },function(response,status){
+     if (status == google.maps.DistanceMatrixStatus.OK) {
+       var origins = response.originAddresses;
+       var destinations = response.destinationAddresses;
+   
+       for (var i = 0; i < origins.length; i++) {
+         var results = response.rows[i].elements;
+         for (var j = 0; j < results.length; j++) {
+           var element = results[j];
+           var distance = element.distance.value;
+           var color = 'green';
+           if(distance < 1500){
+             color = 'red';
+           } 
+           if(distance >= 1500 && distance < 2000){
+             color = 'orange';
+           } 
+           if(distance > 2000){
+             color = 'green';
+           }
+           console.log(color);
+           snappedCircle.setOptions({fillColor : color})
+           snappedCircle.setCenter(p2);
+         }
+       }
+     }
+    }
+  )        
 }
 
 }
