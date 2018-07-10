@@ -13,31 +13,59 @@ export class SpeedometerComponent implements OnInit {
 
   public options: any;
   private chart: AmChart;
-  private value: number;
+  private speedChart : AmChart;
+
   private values : any = [];
-  
+  url : string;
   constructor(private AmCharts: AmChartsService , private dataService:DataService) {}
 
   ngOnInit() {
      // Create chartdiv1
     // Create chartdiv2
     this.chart = this.AmCharts.makeChart('chartdiv', this.makeOptions());
-    this.value = Math.round( Math.random() * 200 );
-    this.dataService.getJSON().subscribe(data => {this.values=data;
-      this.changeValue();
+    this.speedChart = this.AmCharts.makeChart('speedchartdiv', this.getSpeedChartOptions());
+   // this.value = Math.round( Math.random() * 200 );
+    //this.url = "http://localhost:8080/predictspeedt2";
+
+    // Observable.interval(5000 ).subscribe(x => {
+    //   this.dataService.getData(this.url).subscribe(data => {
+    //     console.log(data);
+    //     this.updateGraphs(data);
+    //   }, error => {
+    //     console.log(error);
+    //   });
+    // });
+    //Get Data Once and then process it
+    ////////////////////////////////////////////////////////////
+      var url = "assets/data.json";
+      this.dataService.getJSON(url).subscribe(data => {
+        this.values=data;
+        this.changeValue();
     }, error => {
       console.log(error);
     });
-    
+    ////////////////////////////////////////////////////////////
+  }
+
+  updateGraphs(data){
+    //this.randomValue(this.chart, data.speed);
+    this.speedChart.dataProvider.push({
+        "time": new Date(),
+        "speed": data.speed
+    }
+    );
+    this.speedChart.validateData();
   }
 
   changeValue(){
     var i = 0;
-    Observable.interval(2000 ).subscribe(x => {
+    Observable.interval(1300 ).subscribe(x => {
+      i = i + 1; 
       if(this.values){
         if(this.values[i]){
           if(this.values[i].speed){
-            this.randomValue(this.chart, this.values[i].speed);
+            this.updateGraphs(this.values[i]);
+            this.randomValue(this.chart,this.values[i].speed );
           }
         }
       }
@@ -51,9 +79,6 @@ export class SpeedometerComponent implements OnInit {
       if ( gaugeChart.arrows ) {
         if ( gaugeChart.arrows[ 0 ] ) {
           if ( gaugeChart.arrows[ 0 ].setValue ) {
-      //      console.log("getting chart value")
-            
-        //s    console.log("Value = " + value);
             gaugeChart.arrows[ 0 ].setValue(value );
             gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
           }
@@ -66,7 +91,7 @@ export class SpeedometerComponent implements OnInit {
     return {
       "hideCredits":true,
       "type": "gauge",
-      "theme": "dark",
+      "theme": "light",
       "axes": [ {
         "axisThickness": 1,
         "axisAlpha": 0.2,
@@ -98,4 +123,45 @@ export class SpeedometerComponent implements OnInit {
   }
 
 
+  getSpeedChartOptions(){
+    return {
+       "hideCredits":true,
+      "type": "serial",
+      "theme": "light",
+      "zoomOutButton": {
+        "backgroundColor": '#000000',
+        "backgroundAlpha": 0.15
+      },
+      "dataProvider": [],//this.generateChartData(),
+      "categoryField": "time",
+      "categoryAxis": {
+        "parseDates": true,
+        "minPeriod": "ss",
+        "dashLength": 1,
+        "gridAlpha": 0.15,
+        "axisColor": "#DADADA"
+      },
+      "graphs": [ {
+        "id": "g1",
+        "type": "smoothedLine",
+        "valueField": "speed",
+        "bullet": "round",
+        "bulletBorderColor": "#FFFFFF",
+        "bulletBorderThickness": 2,
+        "lineThickness": 2,
+        "lineColor": "#b5030d",
+        "negativeLineColor": "#0352b5",
+        "hideBulletsCount": 50
+      } ],
+      "chartCursor": {
+        "cursorPosition": "mouse"
+      },
+      "chartScrollbar": {
+        "graph": "g1",
+        "scrollbarHeight": 40,
+        "color": "#FFFFFF",
+        "autoGridCount": true
+      }
+    };
+  }
 }

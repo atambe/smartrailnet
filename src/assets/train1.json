@@ -1,0 +1,570 @@
+[
+
+ {
+   "id": 6,
+   "latitude": 18.741365,
+   "longitude": 73.63919,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 7,
+   "latitude": 18.74117833,
+   "longitude": 73.63967167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 8,
+   "latitude": 18.74100333,
+   "longitude": 73.64022333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 9,
+   "latitude": 18.74083167,
+   "longitude": 73.64082667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 10,
+   "latitude": 18.74067833,
+   "longitude": 73.64146167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 11,
+   "latitude": 18.740565,
+   "longitude": 73.64213,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 12,
+   "latitude": 18.74046,
+   "longitude": 73.64282833,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 12,
+   "latitude": 18.74046,
+   "longitude": 73.64282833,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 13,
+   "latitude": 18.740355,
+   "longitude": 73.64355,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 13,
+   "latitude": 18.740355,
+   "longitude": 73.64355,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 14,
+   "latitude": 18.74024833,
+   "longitude": 73.644305,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 14,
+   "latitude": 18.74024833,
+   "longitude": 73.644305,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 15,
+   "latitude": 18.74013833,
+   "longitude": 73.645095,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 15,
+   "latitude": 18.74013833,
+   "longitude": 73.645095,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 16,
+   "latitude": 18.74003667,
+   "longitude": 73.64592667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 16,
+   "latitude": 18.74003667,
+   "longitude": 73.64592667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 17,
+   "latitude": 18.73991833,
+   "longitude": 73.646795,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 17,
+   "latitude": 18.73991833,
+   "longitude": 73.646795,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 18,
+   "latitude": 18.73979667,
+   "longitude": 73.64769667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 19,
+   "latitude": 18.73967667,
+   "longitude": 73.648635,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 20,
+   "latitude": 18.73958,
+   "longitude": 73.64961167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 21,
+   "latitude": 18.73957167,
+   "longitude": 73.650625,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 22,
+   "latitude": 18.73966167,
+   "longitude": 73.65166833,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 23,
+   "latitude": 18.73980667,
+   "longitude": 73.65274,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 24,
+   "latitude": 18.73994833,
+   "longitude": 73.65385167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 25,
+   "latitude": 18.74000167,
+   "longitude": 73.655065,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 25,
+   "latitude": 18.74000169,
+   "longitude": 73.655067,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 26,
+   "latitude": 18.73995,
+   "longitude": 73.65641667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 26,
+   "latitude": 18.73995,
+   "longitude": 73.65641667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 26,
+   "latitude": 18.73997,
+   "longitude": 73.65641669,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 27,
+   "latitude": 18.73987333,
+   "longitude": 73.65785167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 27,
+   "latitude": 18.73987333,
+   "longitude": 73.65785167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 27,
+   "latitude": 18.73987335,
+   "longitude": 73.65785169,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 28,
+   "latitude": 18.73979667,
+   "longitude": 73.65929167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 28,
+   "latitude": 18.73979667,
+   "longitude": 73.65929167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 28,
+   "latitude": 18.73979669,
+   "longitude": 73.65929169,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 29,
+   "latitude": 18.73971833,
+   "longitude": 73.66073333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 29,
+   "latitude": 18.73971833,
+   "longitude": 73.66073333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 29,
+   "latitude": 18.73971835,
+   "longitude": 73.66073335,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 30,
+   "latitude": 18.73964167,
+   "longitude": 73.66218167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 30,
+   "latitude": 18.73964167,
+   "longitude": 73.66218167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 30,
+   "latitude": 18.73964169,
+   "longitude": 73.66218169,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 31,
+   "latitude": 18.73957,
+   "longitude": 73.66362167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 31,
+   "latitude": 18.73957,
+   "longitude": 73.66362167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 31,
+   "latitude": 18.73959,
+   "longitude": 73.66362169,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 32,
+   "latitude": 18.739485,
+   "longitude": 73.66506333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 32,
+   "latitude": 18.739485,
+   "longitude": 73.66506333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 32,
+   "latitude": 18.739487,
+   "longitude": 73.66506335,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 33,
+   "latitude": 18.73923,
+   "longitude": 73.666495,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 33,
+   "latitude": 18.73923,
+   "longitude": 73.666495,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 33,
+   "latitude": 18.73925,
+   "longitude": 73.666497,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 34,
+   "latitude": 18.73869833,
+   "longitude": 73.667855,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 34,
+   "latitude": 18.73869833,
+   "longitude": 73.667855,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 34,
+   "latitude": 18.73869835,
+   "longitude": 73.667857,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 35,
+   "latitude": 18.73790167,
+   "longitude": 73.6691,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 35,
+   "latitude": 18.73790167,
+   "longitude": 73.6691,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 35,
+   "latitude": 18.73790169,
+   "longitude": 73.6693,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 36,
+   "latitude": 18.736925,
+   "longitude": 73.67025333,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 37,
+   "latitude": 18.73589667,
+   "longitude": 73.67138833,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 38,
+   "latitude": 18.73488,
+   "longitude": 73.67252667,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 8,
+   "trainId": 11231
+ },
+ {
+   "id": 39,
+   "latitude": 18.73384167,
+   "longitude": 73.67366,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 9,
+   "trainId": 11231
+ },
+ {
+   "id": 40,
+   "latitude": 18.73279333,
+   "longitude": 73.67480167,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 9,
+   "trainId": 11231
+ },
+ {
+   "id": 41,
+   "latitude": 18.734033,
+   "longitude": 73.673630,
+   "dateTime": 1497240000000,
+   "speed": 30,
+   "trackId": 9,
+   "trainId": 11231
+ }
+]
